@@ -1,0 +1,40 @@
+# Logs (contain real attack data)
+logs/*
+!logs/.gitkeep
+*.log
+
+# GeoIP database (auto-downloaded, MaxMind license prohibits redistribution)
+data/*
+!data/.gitkeep
+*.mmdb
+
+# SSH host keys
+keys/*
+!keys/.gitkeep
+*.pem
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Generated dashboard (will be regenerated)
+web/dashboard.html
+
+# Backup files
+*.bak
+*.bak.*
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# Docker build artifacts
+docker/logs/*
+!docker/logs/.gitkeep
+docker/data/*
+!docker/data/.gitkeep

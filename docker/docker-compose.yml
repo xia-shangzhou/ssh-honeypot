@@ -1,0 +1,26 @@
+version: "3.8"
+
+services:
+  ssh-honeypot:
+    build: .
+    container_name: ssh-honeypot
+    restart: unless-stopped
+    ports:
+      - "${SSH_PORT:-2222}:2222"   # SSH 蜜罐
+      - "${WEB_PORT:-8088}:8088"   # Web 面板
+    volumes:
+      - ./logs:/app/logs           # 日志持久化
+      - ./data:/app/data           # GeoIP 数据库
+    environment:
+      - SSH_PORT=2222
+      - WEB_PORT=8088
+    deploy:
+      resources:
+        limits:
+          memory: 256M
+          cpus: '0.5'
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
