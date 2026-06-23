@@ -1,5 +1,7 @@
 # 🐝 SSH Honeypot
 
+> **[English Documentation](README.en.md)**
+
 一个交互式 SSH 蜜罐系统，模拟真实的 Ubuntu SSH 服务器，自动记录暴力破解尝试和攻击者执行的命令，并生成可视化分析面板。
 
 ## ✨ 功能特性
